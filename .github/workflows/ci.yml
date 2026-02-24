@@ -26,4 +26,6 @@ jobs:
         python -m py_compile app.py
 
     - name: Run Semgrep SAST
-      uses: returntocorp/semgrep-action@v1
+      run: |
+        pip install semgrep
+        semgrep --config=auto .
